@@ -1,3 +1,4 @@
+@import url(https://db.onlinewebfonts.com/c/c891e94039740e4a24a9f53324fd91be?family=NHaasGroteskDSPro-65Md);
 .App {
   text-align: center;
 }
@@ -36,3 +37,32 @@
     transform: rotate(360deg);
   }
 }
+/* In your CSS file */
+.custom-select {
+  width: 100px; /* Adjust the width as needed */
+  display: inline-block; /* Display elements inline to stay in the same row */
+  margin-right: 10px; /* Add some spacing between the elements */
+}
+
+/* .custom-button {
+  width: 150px; /* Adjust the width as needed */
+/* display: inline-block; Display elements inline to stay in the same row */
+/* } */
+
+.custom-slide {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center; Vertically center items within the carousel
+  align-items: center; Horizontally center items within the carousel */
+  /* height: 100vh;  */
+  width: 100vw;
+  max-height: 60vh;
+}
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+/* .custom-image {
+  width: 100vw;
+  max-height: 60vh;
+  object-fit: fill;
+} */
