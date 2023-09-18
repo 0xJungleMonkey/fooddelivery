@@ -37,7 +37,6 @@
     transform: rotate(360deg);
   }
 }
-/* In your CSS file */
 .custom-select {
   width: 100px; /* Adjust the width as needed */
   display: inline-block; /* Display elements inline to stay in the same row */
@@ -76,4 +75,7 @@
   width: 70%;
   left: 15%;
   bottom: 1.25em;
+}
+.custom-nav {
+  background-color: rgba(241, 82, 8, 0.9);
 }

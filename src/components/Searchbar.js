@@ -1,25 +1,20 @@
 import React from "react";
-import {
-  MDBContainer,
-  MDBNavbar,
-  MDBBtn,
-  MDBInputGroup,
-} from "mdb-react-ui-kit";
+import Button from "react-bootstrap/Button";
+import Container from "react-bootstrap/Container";
+import Form from "react-bootstrap/Form";
 
-export default function App() {
+export default function Searchbar() {
   return (
-    <MDBNavbar light bgColor="light">
-      <MDBContainer fluid>
-        <MDBInputGroup tag="form" className="d-flex w-auto mb-3">
-          <input
-            className="form-control"
-            placeholder="Type query"
-            aria-label="Search"
-            type="Search"
-          />
-          <MDBBtn outline>Search</MDBBtn>
-        </MDBInputGroup>
-      </MDBContainer>
-    </MDBNavbar>
+    <div className="search ">
+      <Form className="d-flex w-auto mb-3">
+        <Form.Control
+          type="search"
+          placeholder="Search"
+          className="me-2"
+          aria-label="Search"
+        />
+        <Button variant="primary">Search</Button>
+      </Form>
+    </div>
   );
 }

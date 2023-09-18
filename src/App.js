@@ -1,6 +1,6 @@
 import "./App.css";
 import Login from "./screens/Login";
-
+import "./App.scss";
 import Signup from "./screens/Signup";
 import Home from "./screens/Home";
 import * as ReactDOM from "react-dom/client";

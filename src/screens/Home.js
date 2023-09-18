@@ -11,6 +11,10 @@ const Home = () => {
       <TopNav />
       <Bslide />
       <Dish />
+      <Dish />
+      <Dish />
+      <Dish />
+      <Dish />
       <Footer />
     </div>
   );

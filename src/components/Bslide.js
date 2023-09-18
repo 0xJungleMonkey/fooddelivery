@@ -1,5 +1,5 @@
 import React from "react";
-
+import Searchbar from "./Searchbar";
 const Bslide = () => {
   return (
     <div
@@ -8,22 +8,8 @@ const Bslide = () => {
       data-bs-ride="carousel"
     >
       <div className="carousel-inner">
-        <div className="search">
-          <form className="input-group d-flex w-auto mb-3">
-            <input
-              className="form-control"
-              placeholder="Type query"
-              aria-label="Search"
-              type="Search"
-            />
-            <button
-              className="ripple ripple-surface btn btn-outline-primary"
-              role="button"
-            >
-              Search
-            </button>
-          </form>
-        </div>
+      
+        <Searchbar />
         <div className="carousel-item custom-slide active">
           <img
             src="images/s1.jpg"
