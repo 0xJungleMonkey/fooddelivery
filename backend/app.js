@@ -6,8 +6,8 @@ async function run() {
   try {
     await client.connect();
     // database and collection code goes here
-    const db = client.db("myDatabase");
-    const coll = db.collection("categorys");
+    const db = client.db("freshgo");
+    const coll = db.collection("category");
     console.log("connected");
     // find code goes here
     const cursor = coll.find();
