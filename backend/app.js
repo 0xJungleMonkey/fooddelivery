@@ -1,13 +1,13 @@
 const config = require("./config.json");
 const { MongoClient } = require("mongodb");
-// Replace the uri string with your MongoDB deployment's connection string.
+//connect with mongodb cluster
 const client = new MongoClient(config.mongodbconnection);
 async function run() {
   try {
     await client.connect();
     // database and collection code goes here
-    const db = client.db("sample_guides");
-    const coll = db.collection("planets");
+    const db = client.db("myDatabase");
+    const coll = db.collection("categorys");
     console.log("connected");
     // find code goes here
     const cursor = coll.find();
