@@ -13,13 +13,11 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
-  password: {
-    type: String,
-    required: true,
-  },
+  password: String,
+
   data: {
     type: Date,
-    required: Date.now,
+    default: Date.now,
   },
 });
-module.exports = mongoose.deleteModel("user", userSchema);
+module.exports = mongoose.model("user", userSchema);
