@@ -22,7 +22,7 @@ const TopNav = () => {
           <div>
             <Nav className="me-auto">
               <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="#features">Signup</Nav.Link>
+              <Nav.Link href="/signup">Signup</Nav.Link>
               <Nav.Link href="#pricing">Login</Nav.Link>
               <Nav.Link href="#">
                 <Cart3 />
