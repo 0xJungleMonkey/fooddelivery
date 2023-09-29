@@ -29,5 +29,19 @@ router.post(
     }
   }
 );
-
+router.post("/login", async (req, res) => {
+  let email = req.body.email;
+  try {
+    let userData = await User.findOne({ email });
+    if (!userData || req.body.password !== userData.password) {
+      return res
+        .status(400)
+        .json({ errors: "Try logging with correct credentials" });
+    }
+    res.json(userData);
+  } catch (error) {
+    console.log(error);
+    res.json({ success: false });
+  }
+});
 module.exports = router;

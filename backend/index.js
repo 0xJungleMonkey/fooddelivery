@@ -11,7 +11,8 @@ app.get("/", (req, res) => {
 });
 app.use(cors());
 app.use(express.json());
-app.use("/api", require("./routes/createUser"));
+app.use("/api", require("./routes/user"));
+// app.use("/api", require("./routes/findUser"));
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
