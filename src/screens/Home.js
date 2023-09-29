@@ -1,7 +1,7 @@
 import React from "react";
 import TopNav from "../components/TopNav.js";
 import Footer from "../components/Footer";
-import Dish from "../components/Dish.js";
+import Dish from "../components/Menu_item.js";
 // import Slide from "../components/Slide.js";
 import Bslide from "../components/Bslide.js";
 

@@ -6,10 +6,9 @@ async function mongoDB() {
     await mongoose.connect(config.mongodbconnection, { useNewUrlParser: true });
 
     console.log("connected");
-    const fetched_data = await mongoose.connection.db.collection("recipes");
+    const fetched_data = await mongoose.connection.db.collection("menu_items");
     const data = await fetched_data.find({}).toArray();
     console.log(data);
-    
   } catch (err) {
     console.error("Error:", err);
   }

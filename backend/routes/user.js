@@ -4,6 +4,7 @@ const User = require("../models/User");
 const { body, validationResult } = require("express-validator");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const config = require("../config.json");
 router.post(
   "/createuser",
   body("email").isEmail(),
@@ -49,7 +50,14 @@ router.post("/login", async (req, res) => {
     if (pwdCompare !== true) {
       return res.status(400).json({ errors: "Incorrect password" });
     }
-    res.json(userData);
+    const data = {
+      user: {
+        id: userData.id,
+      },
+    };
+    const authToken = jwt.sign(data, config.jwtprivatekey);
+
+    return res.json({ success: true, authToken });
   } catch (error) {
     console.log(error);
     res.json({ success: false });

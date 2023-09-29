@@ -2,11 +2,14 @@ import React from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 const Login = () => {
   const [credentials, setCredentials] = useState({
     email: "",
     password: "",
   });
+  let navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(
@@ -27,9 +30,14 @@ const Login = () => {
     });
     const json = await response.json();
     console.log(json);
-    // if (!json.success) {
-    //   alert("Enter Valid Credentials");
-    // }
+    if (!json.success) {
+      alert("Enter Valid Credentials");
+    }
+    if (json.success) {
+      localStorage.setItem("authToken", json.authToken);
+      console.log(localStorage.getItem("authToken"));
+      navigate("/");
+    }
   };
   const onChange = (event) => {
     setCredentials({ ...credentials, [event.target.name]: event.target.value });

@@ -12,7 +12,7 @@ app.get("/", (req, res) => {
 app.use(cors());
 app.use(express.json());
 app.use("/api", require("./routes/user"));
-// app.use("/api", require("./routes/findUser"));
+app.use("/dish", require("./routes/menu"));
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
