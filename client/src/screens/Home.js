@@ -1,6 +1,6 @@
 import React from "react";
 import TopNav from "../components/TopNav.js";
-import Footer from "../components/Footer";
+import Footer from "../components/Footer.js";
 import MenuItem from "../components/MenuItem.js";
 // import Slide from "../components/Slide.js";
 import Bslide from "../components/Bslide.js";
