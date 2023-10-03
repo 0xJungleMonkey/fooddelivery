@@ -3,8 +3,7 @@ const router = express.Router();
 
 router.post("/items", (req, res) => {
   try {
-    console.log(global.menu_items);
-    res.send([global.menu_items]);
+    res.send([global.menu_items, global.category]);
   } catch (error) {
     console.log(error.message);
     res.send("server error");

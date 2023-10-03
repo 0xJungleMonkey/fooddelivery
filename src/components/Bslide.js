@@ -8,7 +8,6 @@ const Bslide = () => {
       data-bs-ride="carousel"
     >
       <div className="carousel-inner">
-      
         <Searchbar />
         <div className="carousel-item custom-slide active">
           <img
