@@ -9,12 +9,15 @@ const Home = () => {
   const [foodCategory, setFoodCategory] = useState([]);
   const [foodItem, setFoodItem] = useState([]);
   const loadData = async () => {
-    let response = await fetch("http://localhost:5001/menu/items", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    let response = await fetch(
+      "fooddelivery-mrmujf86j-0xjunglemonkeys-projects.vercel.app/menu/items",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
     response = await response.json();
     setFoodCategory(response[1]);
     setFoodItem(response[0]);
@@ -52,8 +55,6 @@ const Home = () => {
           <div>still loading</div>
         )}
       </div>
-
-      
     </div>
   );
 };
