@@ -1,11 +1,10 @@
 import React from "react";
-import TopNav from "../components/TopNav.js";
 import Footer from "../components/Footer.js";
 import MenuItem from "../components/MenuItem.js";
-// import Slide from "../components/Slide.js";
 import Bslide from "../components/Bslide.js";
 import { useEffect, useState } from "react";
-
+// import Slide from "../components/Slide.js";
+import TopNav from "../components/TopNav.js";
 const Home = () => {
   const [foodCategory, setFoodCategory] = useState([]);
   const [foodItem, setFoodItem] = useState([]);
@@ -26,7 +25,7 @@ const Home = () => {
   }, []);
   return (
     <div>
-      <TopNav />
+      {/* <TopNav /> */}
       <Bslide />
       <div className="container">
         {foodCategory.length !== 0 ? (

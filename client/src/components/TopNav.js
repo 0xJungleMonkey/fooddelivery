@@ -16,12 +16,12 @@ const TopNav = () => {
         className="custom-nav"
       >
         <Container>
-          <Navbar.Brand href="#home" style={{ fontSize: 25 }}>
+          <Navbar.Brand href="/" style={{ fontSize: 25 }}>
             <EggFried size={35} /> FreshGo
           </Navbar.Brand>
           <div>
             <Nav className="me-auto">
-              <Nav.Link href="#home">Home</Nav.Link>
+              <Nav.Link href="/">Home</Nav.Link>
               <Nav.Link href="/signup">Signup</Nav.Link>
               <Nav.Link href="/login">Login</Nav.Link>
               <Nav.Link href="#">
