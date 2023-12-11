@@ -17,7 +17,7 @@ const TopNav = () => {
       >
         <Container>
           <Navbar.Brand href="/" style={{ fontSize: 25 }}>
-            <EggFried size={35} /> FreshGo
+            <EggFried size={35} /> QuickBite
           </Navbar.Brand>
           <div>
             <Nav className="me-auto">
