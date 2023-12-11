@@ -1,9 +1,14 @@
 const mongoose = require("mongoose");
-const config = require("./config.json");
-
+// const config = require("./config.json");
+const dotenv = require("dotenv");
+dotenv.config();
 async function mongoDB() {
   try {
-    await mongoose.connect(config.mongodbconnection, { useNewUrlParser: true });
+    // await mongoose.connect(config.mongodbconnection, { useNewUrlParser: true });
+    await mongoose.connect(process.env.mongodbconnection, {
+      useNewUrlParser: true,
+    });
+
     console.log("connected");
     //Storing the menu items and food categories in global variables (global.menu_items and global.category) suggests that this data is intended to be accessible throughout the application's lifecycle.
     const fetched_data = await mongoose.connection.db.collection("menu_items");
