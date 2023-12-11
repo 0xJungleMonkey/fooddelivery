@@ -10,7 +10,7 @@ const Home = () => {
   const [foodItem, setFoodItem] = useState([]);
   const loadData = async () => {
     let response = await fetch(
-      "fooddelivery-mrmujf86j-0xjunglemonkeys-projects.vercel.app/menu/items",
+      "https://fooddelivery-two.vercel.app/menu/items",
       {
         method: "POST",
         headers: {
@@ -55,6 +55,8 @@ const Home = () => {
           <div>still loading</div>
         )}
       </div>
+
+      <Footer />
     </div>
   );
 };
