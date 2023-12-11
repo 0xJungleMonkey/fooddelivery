@@ -16,7 +16,7 @@ function App() {
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/signup" element={<Signup />} />
         </Routes>
-        {/* <Theme /> */}
+        
       </div>
     </Router>
   );
