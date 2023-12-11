@@ -28,7 +28,6 @@ const Home = () => {
   }, []);
   return (
     <div>
-      {/* <TopNav /> */}
       <Bslide />
       <div className="container">
         {foodCategory.length !== 0 ? (
@@ -55,8 +54,6 @@ const Home = () => {
           <div>still loading</div>
         )}
       </div>
-
-      <Footer />
     </div>
   );
 };
