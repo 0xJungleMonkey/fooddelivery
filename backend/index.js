@@ -4,10 +4,11 @@ const port = 5001;
 var cors = require("cors");
 const { connectToMongoDB } = require("./db");
 connectToMongoDB();
+app.use(cors());
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
-app.use(cors());
+
 app.use(express.json());
 app.get("/api", (req, res) => {
   res.send("Hello World!");
