@@ -1,26 +1,39 @@
 const mongoose = require("mongoose");
-// const config = require("./config.json");
 const dotenv = require("dotenv");
 dotenv.config();
-async function mongoDB() {
+async function connectToMongoDB() {
   try {
-    // await mongoose.connect(config.mongodbconnection, { useNewUrlParser: true });
     await mongoose.connect(process.env.mongodbconnection, {
       useNewUrlParser: true,
     });
+    console.log("Connected to MongoDB");
+  } catch (error) {
+    console.error("Error connecting to MongoDB:", error);
+    throw error;
+  }
+}
 
-    console.log("connected");
-    //Storing the menu items and food categories in global variables (global.menu_items and global.category) suggests that this data is intended to be accessible throughout the application's lifecycle.
-    const fetched_data = await mongoose.connection.db.collection("menu_items");
-    const data = await fetched_data.find({}).toArray();
+async function fetchDataFromMongoDB() {
+  try {
+    const fetchedData = await mongoose.connection.db.collection("menu_items");
+    const data = await fetchedData.find({}).toArray();
 
     const foodCategory = await mongoose.connection.db.collection("category");
     const catData = await foodCategory.find({}).toArray();
 
     global.menu_items = data;
     global.category = catData;
-  } catch (err) {
-    console.error("Error:", err);
+    console.log(global.category);
+  } catch (error) {
+    console.error("Error fetching data from MongoDB:", error);
+    throw error;
   }
 }
-module.exports = mongoDB;
+
+async function initialize() {
+  await connectToMongoDB();
+  await fetchDataFromMongoDB();
+}
+
+module.exports = { connectToMongoDB, fetchDataFromMongoDB, initialize };
+
