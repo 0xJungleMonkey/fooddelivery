@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 dotenv.config();
-async function connectToMongoDB() {
+function connectToMongoDB() {
   try {
-    await mongoose.connect(process.env.mongodbconnection, {
+    mongoose.connect(process.env.mongodbconnection, {
       useNewUrlParser: true,
     });
     console.log("Connected to MongoDB");
@@ -30,10 +30,4 @@ async function fetchDataFromMongoDB() {
   }
 }
 
-async function initialize() {
-  await connectToMongoDB();
-  await fetchDataFromMongoDB();
-}
-
-module.exports = { connectToMongoDB, fetchDataFromMongoDB, initialize };
-
+module.exports = { connectToMongoDB, fetchDataFromMongoDB };
