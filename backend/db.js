@@ -13,13 +13,13 @@ function connectToMongoDB() {
   }
 }
 
-function fetchDataFromMongoDB() {
+async function fetchDataFromMongoDB() {
   try {
-    const fetchedData = mongoose.connection.db.collection("menu_items");
-    const data = fetchedData.find({}).toArray();
+    const fetchedData = await mongoose.connection.db.collection("menu_items");
+    const data = await fetchedData.find({}).toArray();
 
-    const foodCategory = mongoose.connection.db.collection("category");
-    const catData = foodCategory.find({}).toArray();
+    const foodCategory = await mongoose.connection.db.collection("category");
+    const catData = await foodCategory.find({}).toArray();
 
     global.menu_items = data;
     global.category = catData;
