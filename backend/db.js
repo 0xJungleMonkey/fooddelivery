@@ -23,7 +23,6 @@ async function fetchDataFromMongoDB() {
 
     global.menu_items = data;
     global.category = catData;
-    console.log(global.category);
   } catch (error) {
     console.error("Error fetching data from MongoDB:", error);
     throw error;

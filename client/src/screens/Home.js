@@ -11,6 +11,7 @@ const Home = () => {
   const loadData = async () => {
     let response = await fetch(
       "https://fooddelivery-two.vercel.app/menu/items",
+      // "http://localhost:5001/menu/items",
       {
         method: "POST",
         headers: {
