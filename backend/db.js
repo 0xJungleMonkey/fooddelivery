@@ -16,13 +16,20 @@ async function connectToMongoDB() {
 async function fetchDataFromMongoDB() {
   try {
     const fetchedData = await mongoose.connection.db.collection("menu_items");
+    console.log(1);
     const data = await fetchedData.find({}).toArray();
+    console.log(2);
 
     const foodCategory = await mongoose.connection.db.collection("category");
+    console.log(3);
+
     const catData = await foodCategory.find({}).toArray();
+    console.log(4);
 
     global.menu_items = data;
+    console.log(5);
     global.category = catData;
+    console.log(6);
   } catch (error) {
     console.error("Error fetching data from MongoDB:", error);
     throw error;
