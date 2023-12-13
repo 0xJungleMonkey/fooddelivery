@@ -52,7 +52,7 @@ const Home = () => {
             );
           })
         ) : (
-          <div>still loading</div>
+          <div>Still loading, Please refresh.... </div>
         )}
       </div>
     </div>
