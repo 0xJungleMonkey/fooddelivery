@@ -5,8 +5,8 @@ const { fetchDataFromMongoDB } = require("../db");
 router.post("/items", async (req, res) => {
   try {
     // Ensure that data is fetched before responding
-    // await fetchDataFromMongoDB();
-    await res.send([global.menu_items, global.category]);
+    await fetchDataFromMongoDB();
+    res.send([global.menu_items, global.category]);
   } catch (error) {
     console.log(error.message);
     // res.send("server error");
