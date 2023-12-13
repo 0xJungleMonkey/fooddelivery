@@ -19,7 +19,9 @@ async function initializeApp() {
 
     // Fetch data from MongoDB
     await fetchDataFromMongoDB();
-
+    app.get("/", (req, res) => {
+      res.send("Hello World!");
+    });
     // Use the menuRouter for requests to /menu/items
     app.use("/menu", menuRouter);
 
