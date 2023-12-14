@@ -4,7 +4,9 @@ const User = require("../models/User");
 const { body, validationResult } = require("express-validator");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const config = require("../config.json");
+// const config = require("../config.json");
+const dotenv = require("dotenv");
+dotenv.config();
 router.post(
   "/createuser",
   body("email").isEmail(),
@@ -55,7 +57,7 @@ router.post("/login", async (req, res) => {
         id: userData.id,
       },
     };
-    const authToken = jwt.sign(data, config.jwtprivatekey);
+    const authToken = jwt.sign(data, process.env.jwtprivatekey);
 
     return res.json({ success: true, authToken });
   } catch (error) {

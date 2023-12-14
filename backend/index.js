@@ -24,7 +24,7 @@ async function initializeApp() {
     });
     // Use the menuRouter for requests to /menu/items
     app.use("/menu", menuRouter);
-
+    app.use("/user", require("./routes/user"));
     // Start listening after successful connection, data fetching, and route setup
     app.listen(port, () => {
       console.log(`Example app listening on port ${port}`);

@@ -76,3 +76,32 @@
 .custom-nav {
   background-color: rgba(241, 82, 8, 0.9);
 }
+.cartwidget-container {
+  /* margin: 1rem; */
+  padding: 0rem;
+  display: flex;
+  border: none;
+  background: none;
+  cursor: pointer;
+  align-items: center;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+
+  /* &:hover {
+    outline: 1px solid white;
+  } */
+
+  .cartwidget-shoppingCart {
+    height: 3em;
+    padding: 1.5rem 0.4rem;
+    will-change: filter;
+    transition: filter 300ms;
+  }
+
+  .cartwidget-productsCount {
+    z-index: 1;
+    font-size: 2em;
+    top: 38px;
+    color: orange;
+  }
+}

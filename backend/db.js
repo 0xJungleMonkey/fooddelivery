@@ -16,7 +16,7 @@ async function connectToMongoDB() {
 async function fetchDataFromMongoDB() {
   try {
     const fetchedData = await mongoose.connection.db.collection("menu_items");
-    console.log(fetchedData);
+    console.log(1);
     const data = await fetchedData.find({}).toArray();
     console.log(2);
 

@@ -3,7 +3,7 @@ import Theme from "./Theme.js";
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
-
+import { CartWidget } from "./CartWidget.js";
 import { Cart3, EggFried } from "react-bootstrap-icons";
 
 const TopNav = () => {
@@ -20,16 +20,16 @@ const TopNav = () => {
             <EggFried size={35} /> QuickBite
           </Navbar.Brand>
           <div>
-            <Nav className="me-auto">
+            <Nav className="me-auto d-flex align-items-center ">
               <Nav.Link href="/">Home</Nav.Link>
               <Nav.Link href="/signup">Signup</Nav.Link>
               <Nav.Link href="/login">Login</Nav.Link>
-              <Nav.Link href="#">
-                <Cart3 />
+              <Nav.Link href="/cart">
+                <CartWidget productsCount="1" />
               </Nav.Link>
+              <Theme />
             </Nav>
           </div>
-          <Theme />
         </Container>
       </Navbar>
     </div>

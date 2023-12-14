@@ -1,16 +1,15 @@
 import React from "react";
-import Footer from "../components/Footer.js";
 import MenuItem from "../components/MenuItem.js";
 import Bslide from "../components/Bslide.js";
 import { useEffect, useState } from "react";
 // import Slide from "../components/Slide.js";
-import TopNav from "../components/TopNav.js";
 const Home = () => {
   const [foodCategory, setFoodCategory] = useState([]);
   const [foodItem, setFoodItem] = useState([]);
   const loadData = async () => {
     let response = await fetch(
-      "https://fooddelivery-two.vercel.app/menu/items",
+      "https://fooddelivery-backend-9dwj.onrender.com/menu/items",
+      // "https://fooddelivery-two.vercel.app/menu/items",
       // "http://localhost:5001/menu/items",
       {
         method: "POST",
@@ -52,7 +51,7 @@ const Home = () => {
             );
           })
         ) : (
-          <div>Still loading, Please refresh.... </div>
+          <div>Still loading </div>
         )}
       </div>
     </div>
