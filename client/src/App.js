@@ -7,18 +7,20 @@ import * as ReactDOM from "react-dom/client";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import "./index.css";
 import Cart from "./screens/Cart";
-// import TopNav from "./components/TopNav";
+import TopNav from "./components/TopNav";
+import Footer from "./components/Footer";
 function App() {
   return (
     <Router>
       <div className="App">
-        {/* <TopNav /> */}
+        <TopNav />
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/signup" element={<Signup />} />
           <Route exact path="/cart" element={<Cart />} />
         </Routes>
+        <Footer />
       </div>
     </Router>
   );

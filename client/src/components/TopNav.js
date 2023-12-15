@@ -5,8 +5,12 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import { CartWidget } from "./CartWidget.js";
 import { Cart3, EggFried } from "react-bootstrap-icons";
+import { useNavigate } from "react-router-dom";
 
-const TopNav = () => {
+const TopNav = ({ useNavigate }) => {
+  const handleLogout = () => {
+    localStorage.removeItem("authToken");
+  };
   return (
     <div>
       <Navbar
@@ -22,11 +26,23 @@ const TopNav = () => {
           <div>
             <Nav className="me-auto d-flex align-items-center ">
               <Nav.Link href="/">Home</Nav.Link>
-              <Nav.Link href="/signup">Signup</Nav.Link>
-              <Nav.Link href="/login">Login</Nav.Link>
-              <Nav.Link href="/cart">
-                <CartWidget productsCount="1" />
-              </Nav.Link>
+              {localStorage.getItem("authToken") ? (
+                <>
+                  <Nav.Link href="/cart">
+                    <CartWidget productsCount="1" />
+                  </Nav.Link>
+                  <Nav.Link>My orders</Nav.Link>
+                  <Nav.Link onClick={handleLogout} href="/login">
+                    Logout
+                  </Nav.Link>
+                </>
+              ) : (
+                <>
+                  <Nav.Link href="/signup">Signup</Nav.Link>
+                  <Nav.Link href="/login">Login</Nav.Link>
+                </>
+              )}
+
               <Theme />
             </Nav>
           </div>
