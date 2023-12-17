@@ -22,7 +22,10 @@ export default function Cart() {
     dispatch({ type: "REMOVE", index: index });
     // console.log("meow");
   };
-  // let totalPrice = data.reduce((total, food) => total + food.price, 0);
+  let totalPrice = data.reduce(
+    (total, food) => total + parseFloat(food.price.slice(1)),
+    0
+  );
 
   return (
     <>
@@ -58,7 +61,7 @@ export default function Cart() {
             </tbody>
           </table>
           <div>
-            {/* <h1 className="fs-2">Total Price: {totalPrice}/-</h1> */}
+            <h1 className="fs-2">Total Price: ${totalPrice}</h1>
           </div>
           <div>
             <button className="btn bg-success mt-5 "> Check Out </button>
