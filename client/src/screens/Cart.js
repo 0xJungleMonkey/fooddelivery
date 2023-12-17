@@ -1,8 +1,6 @@
 import React from "react";
 import TopNav from "../components/TopNav";
-import { Cart3, EggFried } from "react-bootstrap-icons";
 import { Trash } from "react-bootstrap-icons";
-// import DeleteIcon from "@material-ui/icons/Delete";
 
 import { useCart, useDispatchCart } from "../components/ContextReducer";
 export default function Cart() {
@@ -20,17 +18,14 @@ export default function Cart() {
   }
   const handleRemove = (index) => {
     dispatch({ type: "REMOVE", index: index });
-    // console.log("meow");
   };
   let totalPrice = data.reduce(
     (total, food) => total + parseFloat(food.price.slice(1)),
     0
   );
-
   return (
     <>
       {/* <TopNav /> */}
-
       <div className="container mt-5 table-responsive table-responsive-sm table-responsive-md">
         <div className="mt-5">
           <table className="table table-hover ">
@@ -39,7 +34,6 @@ export default function Cart() {
                 <th scope="col">#</th>
                 <th scope="col">Name</th>
                 <th scope="col">Quantity</th>
-                <th scope="col">Option</th>
                 <th scope="col">Amount</th>
                 <th scope="col"></th>
               </tr>
@@ -50,11 +44,9 @@ export default function Cart() {
                   <th scope="row">{index + 1}</th>
                   <td>{food.name}</td>
                   <td>{food.qty}</td>
-                  <td>{food.size}</td>
                   <td>{food.price}</td>
                   <td onClick={() => handleRemove(index)}>
                     <Trash />
-                    {/* <DeleteIcon /> */}
                   </td>
                 </tr>
               ))}
