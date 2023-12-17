@@ -34,7 +34,7 @@ function MenuItem({ item }) {
       await dispatch({
         type: "UPDATE",
         id: item._id,
-        price: item.price,
+        price: item.price.slice(1),
         qty: qty,
       });
       console.log("Cart after update:", data);
@@ -44,7 +44,7 @@ function MenuItem({ item }) {
       type: "ADD",
       id: item._id,
       name: item.name,
-      price: item.price,
+      price: parseInt(item.price.slice(1)),
       qty: qty,
       img: item.img,
     });
@@ -59,12 +59,14 @@ function MenuItem({ item }) {
       <Card style={cardStyle}>
         <Card.Img variant="top" src={item.img} />
         <Card.Body className="d-flex flex-column">
-          <Card.Title>{item.name}</Card.Title>
-          <Card.Text>{item.description}</Card.Text>
-          <Card.Text>{item.price}</Card.Text>
+          <Card.Title className="m-auto">{item.name}</Card.Title>
+          <Card.Text className="m-auto text-center">
+            {item.description}
+          </Card.Text>
+          <Card.Text className="m-auto">{item.price}</Card.Text>
 
           <div className="mt-auto d-flex justify-content-between align-items-center">
-            <Col sm={6} className="custom-select">
+            {/* <Col sm={6} className="custom-select">
               <Form.Select
                 aria-label="Default select example"
                 onClick={handleClick}
@@ -79,15 +81,15 @@ function MenuItem({ item }) {
                 })}
               </Form.Select>
             </Col>
-            <Col sm={6}>
-              <Button
-                variant="primary"
-                className="ml-2"
-                onClick={handleAddToCart}
-              >
-                Add to cart
-              </Button>
-            </Col>
+            <Col sm={6}> */}
+            <Button
+              variant="primary"
+              className="m-auto"
+              onClick={handleAddToCart}
+            >
+              Add to cart
+            </Button>
+            {/* </Col> */}
           </div>
         </Card.Body>
       </Card>

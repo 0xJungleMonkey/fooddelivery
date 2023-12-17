@@ -43,6 +43,7 @@ const reducer = (state, action) => {
     //     return arr;
     //   });
     //   return arr;
+
     case "UPDATE":
       console.log("I am updating");
       return state.map((food) =>
@@ -50,11 +51,21 @@ const reducer = (state, action) => {
           ? {
               ...food,
               qty: parseInt(action.qty) + food.qty,
-              price: action.price + food.price,
+              price: parseInt(action.qty) * parseInt(action.price) + food.price,
             }
           : food
       );
-
+    case "INCREASE":
+      console.log("I am updating");
+      return state.map((food) =>
+        food.id === action.id
+          ? {
+              ...food,
+              qty: parseInt(action.qty),
+              price: parseInt(action.price),
+            }
+          : food
+      );
     // case "UPDATE":
     //   return state.map((food) => {
     //     if (food.id === action.id) {
@@ -72,8 +83,8 @@ const reducer = (state, action) => {
         food.id === action.id
           ? {
               ...food,
-              qty: food.qty - parseInt(action.qty),
-              price: action.price + food.price,
+              qty: parseInt(action.qty),
+              price: parseInt(action.price),
             }
           : food
       );

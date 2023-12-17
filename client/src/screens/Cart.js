@@ -17,12 +17,11 @@ export default function Cart() {
     );
   }
   const handleIncrement = async (item) => {
-    
     await dispatch({
-      type: "UPDATE",
+      type: "INCREASE",
       id: item.id,
-      price: item.price,
-      qty: 1,
+      price: item.price + item.price / item.qty,
+      qty: item.qty + 1,
     });
     console.log("handleIncrement called" + item.id);
     return;
@@ -34,8 +33,8 @@ export default function Cart() {
       dispatch({
         type: "DEDUCE",
         id: item.id,
-        price: item.price,
-        qty: 1,
+        price: item.price - item.price / item.qty,
+        qty: item.qty - 1,
       });
       console.log("I am done");
       return;
@@ -47,10 +46,7 @@ export default function Cart() {
   const handleRemove = (index) => {
     dispatch({ type: "REMOVE", index: index });
   };
-  let totalPrice = data.reduce(
-    (total, food) => total + parseFloat(food.price.slice(1)),
-    0
-  );
+  let totalPrice = data.reduce((total, food) => total + food.price, 0);
   return (
     <>
       {/* <TopNav /> */}
@@ -79,7 +75,7 @@ export default function Cart() {
                       onRemove={handleRemove}
                     />
                   </td>
-                  <td>{food.price}</td>
+                  <td>${food.price}</td>
                   <td onClick={() => handleRemove(index)}>
                     <Trash />
                   </td>
