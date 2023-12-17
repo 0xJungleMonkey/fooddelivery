@@ -1,10 +1,11 @@
+const job = require("~/cron.js");
 const express = require("express");
 const app = express();
 const port = 5001;
 const cors = require("cors");
 const { connectToMongoDB, fetchDataFromMongoDB } = require("./db");
 const menuRouter = require("./routes/menu");
-
+job.start();
 // Use CORS middleware
 app.use(cors());
 
