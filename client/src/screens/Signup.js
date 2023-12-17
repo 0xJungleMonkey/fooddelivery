@@ -24,7 +24,8 @@ const Signup = () => {
       })
     );
     const response = await fetch(
-      "http://localhost:5001/user/createuser",
+      "https://quickbite-htqe.onrender.com/user/createuser",
+      // "http://localhost:5001/user/createuser",
       // "https://fooddelivery-backend-9dwj.onrender.com/menu/items",
       {
         method: "POST",
@@ -52,81 +53,82 @@ const Signup = () => {
     setCredentials({ ...credentials, [event.target.name]: event.target.value });
   };
   return (
-    <><TopNav/>
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "100vh", // Set the height of the container to the viewport height
-      }}
-    >
-      <Card style={{ width: "30rem", height: "36rem" }}>
-        <Card.Body>
-          <Card.Title>Signup</Card.Title>
-          <Card.Text>
-            Please sign up an account to reserve table, place order and enjoy
-            member benefits.
-          </Card.Text>
-          <Form onSubmit={handleSubmit}>
-            <Form.Group className="mb-3" controlId="formBasicName">
-              <Form.Label>Username</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Enter Name"
-                value={credentials.name}
-                name="name"
-                onChange={onChange}
-              />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Email address</Form.Label>
-              <Form.Control
-                type="email"
-                placeholder="Enter email"
-                value={credentials.email}
-                name="email"
-                onChange={onChange}
-              />
-              <Form.Text className="text-muted">
-                We'll never share your email with anyone else.
-              </Form.Text>
-            </Form.Group>
+    <>
+      <TopNav />
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100vh", // Set the height of the container to the viewport height
+        }}
+      >
+        <Card style={{ width: "30rem", height: "36rem" }}>
+          <Card.Body>
+            <Card.Title>Signup</Card.Title>
+            <Card.Text>
+              Please sign up an account to reserve table, place order and enjoy
+              member benefits.
+            </Card.Text>
+            <Form onSubmit={handleSubmit}>
+              <Form.Group className="mb-3" controlId="formBasicName">
+                <Form.Label>Username</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="Enter Name"
+                  value={credentials.name}
+                  name="name"
+                  onChange={onChange}
+                />
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Label>Email address</Form.Label>
+                <Form.Control
+                  type="email"
+                  placeholder="Enter email"
+                  value={credentials.email}
+                  name="email"
+                  onChange={onChange}
+                />
+                <Form.Text className="text-muted">
+                  We'll never share your email with anyone else.
+                </Form.Text>
+              </Form.Group>
 
-            <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Label>Password</Form.Label>
-              <Form.Control
-                type="password"
-                placeholder="Password"
-                value={credentials.password}
-                name="password"
-                onChange={onChange}
-              />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicAddress">
-              <Form.Label>Address</Form.Label>
-              <Form.Control
-                type="address"
-                placeholder="Address"
-                value={credentials.address}
-                name="address"
-                onChange={onChange}
-              />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicCheckbox">
-              <Form.Check
-                type="checkbox"
-                label="Receive email notice for orders"
-              />
-            </Form.Group>
-            <Button variant="primary" type="submit">
-              Submit
-            </Button>
-            <Link to="/login">Login</Link>
-          </Form>
-        </Card.Body>
-      </Card>
-    </div>
+              <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Label>Password</Form.Label>
+                <Form.Control
+                  type="password"
+                  placeholder="Password"
+                  value={credentials.password}
+                  name="password"
+                  onChange={onChange}
+                />
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="formBasicAddress">
+                <Form.Label>Address</Form.Label>
+                <Form.Control
+                  type="address"
+                  placeholder="Address"
+                  value={credentials.address}
+                  name="address"
+                  onChange={onChange}
+                />
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                <Form.Check
+                  type="checkbox"
+                  label="Receive email notice for orders"
+                />
+              </Form.Group>
+              <Button variant="primary" type="submit">
+                Submit
+              </Button>
+              <Link to="/login">Login</Link>
+            </Form>
+          </Card.Body>
+        </Card>
+      </div>
     </>
   );
 };

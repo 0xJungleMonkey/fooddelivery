@@ -49,20 +49,24 @@ export default function Cart() {
   let totalPrice = data.reduce((total, food) => total + food.price, 0);
   const handleCheckOut = async () => {
     let userEmail = localStorage.getItem("userEmail");
+    console.log(userEmail);
     // console.log(data,localStorage.getItem("userEmail"),new Date())
-    let response = await fetch("http://localhost:5000/api/auth/orderData", {
-      // credentials: 'include',
-      // Origin:"http://localhost:3000/login",
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        order_data: data,
-        email: userEmail,
-        order_date: new Date().toDateString(),
-      }),
-    });
+    let response = await fetch(
+      "https://quickbite-htqe.onrender.com/user/placeorder",
+      {
+        // credentials: 'include',
+        // Origin:"http://localhost:3000/login",
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          order_data: data,
+          email: userEmail,
+          order_date: new Date().toDateString(),
+        }),
+      }
+    );
     console.log("JSON RESPONSE:::::", response.status);
     if (response.status === 200) {
       dispatch({ type: "DROP" });
@@ -109,7 +113,10 @@ export default function Cart() {
             <h1 className="fs-2">Total Price: ${totalPrice}</h1>
           </div>
           <div>
-            <button className="btn bg-success mt-5 "> Check Out </button>
+            <button className="btn bg-success mt-5 " onClick={handleCheckOut}>
+              {" "}
+              Check Out{" "}
+            </button>
           </div>
         </div>
       </div>

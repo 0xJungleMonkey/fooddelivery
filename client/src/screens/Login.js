@@ -19,7 +19,8 @@ const Login = () => {
       })
     );
     const response = await fetch(
-      "http://localhost:5001/user/login",
+      "https://quickbite-htqe.onrender.com/user/login",
+      // "http://localhost:5001/user/login",
       // "https://fooddelivery-backend-9dwj.onrender.com/menu/items",
       {
         method: "POST",
@@ -39,7 +40,12 @@ const Login = () => {
     }
     if (json.success) {
       localStorage.setItem("authToken", json.authToken);
-      console.log(localStorage.getItem("authToken"));
+      localStorage.setItem("userEmail", credentials.email);
+
+      console.log(
+        localStorage.getItem("authToken"),
+        localStorage.getItem("userEmail")
+      );
       navigate("/");
     }
   };
