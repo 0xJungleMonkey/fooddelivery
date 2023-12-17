@@ -1,4 +1,3 @@
-const e = require("cors");
 const cron = require("cron");
 const https = require("https");
 // Replace 'YOUR_BACKEND_URL' with the actual URL of your backend service
@@ -20,4 +19,4 @@ const job = new cron.CronJob("*/14 * * * * ", function () {
     });
 });
 
-module.exports = { job };
+module.exports = job;
