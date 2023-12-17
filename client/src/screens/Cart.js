@@ -1,7 +1,7 @@
 import React from "react";
 import TopNav from "../components/TopNav";
 import { Trash } from "react-bootstrap-icons";
-
+import QuantitySelector from "../components/QuantitySelector";
 import { useCart, useDispatchCart } from "../components/ContextReducer";
 export default function Cart() {
   let data = useCart();
@@ -16,6 +16,34 @@ export default function Cart() {
       </>
     );
   }
+  const handleIncrement = async (item) => {
+    
+    await dispatch({
+      type: "UPDATE",
+      id: item.id,
+      price: item.price,
+      qty: 1,
+    });
+    console.log("handleIncrement called" + item.id);
+    return;
+  };
+
+  const handleDecrement = (item, index) => {
+    console.log("meow" + item.qty);
+    if (item.qty > 1) {
+      dispatch({
+        type: "DEDUCE",
+        id: item.id,
+        price: item.price,
+        qty: 1,
+      });
+      console.log("I am done");
+      return;
+    } else {
+      dispatch({ type: "REMOVE", index: index });
+      return;
+    }
+  };
   const handleRemove = (index) => {
     dispatch({ type: "REMOVE", index: index });
   };
@@ -43,7 +71,14 @@ export default function Cart() {
                 <tr>
                   <th scope="row">{index + 1}</th>
                   <td>{food.name}</td>
-                  <td>{food.qty}</td>
+                  <td>
+                    <QuantitySelector
+                      quantity={food.qty}
+                      onIncrement={() => handleIncrement(food)}
+                      onDecrement={() => handleDecrement(food, index)}
+                      onRemove={handleRemove}
+                    />
+                  </td>
                   <td>{food.price}</td>
                   <td onClick={() => handleRemove(index)}>
                     <Trash />

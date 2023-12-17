@@ -12,7 +12,7 @@ function MenuItem({ item }) {
   const [qty, setQty] = useState(1);
   const dispatch = useDispatchCart();
   const handleClick = () => {
-    if (!localStorage.getItem("token")) {
+    if (!localStorage.getItem("authToken")) {
       navigate("/login");
     }
   };
