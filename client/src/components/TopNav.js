@@ -61,7 +61,7 @@ const TopNav = () => {
                 <>
                   <Nav.Link
                     onClick={() => {
-                      navigate("/signup");
+                      navigate("/");
                     }}
                   >
                     Home
