@@ -4,6 +4,7 @@ import Form from "react-bootstrap/Form";
 import Card from "react-bootstrap/Card";
 import { Link, Navigate, useHistory, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import TopNav from "../components/TopNav";
 const Signup = () => {
   const navigate = useNavigate();
   const [credentials, setCredentials] = useState({
@@ -51,6 +52,7 @@ const Signup = () => {
     setCredentials({ ...credentials, [event.target.name]: event.target.value });
   };
   return (
+    <><TopNav/>
     <div
       style={{
         display: "flex",
@@ -125,6 +127,7 @@ const Signup = () => {
         </Card.Body>
       </Card>
     </div>
+    </>
   );
 };
 

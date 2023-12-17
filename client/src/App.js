@@ -9,20 +9,24 @@ import "./index.css";
 import Cart from "./screens/Cart";
 import TopNav from "./components/TopNav";
 import Footer from "./components/Footer";
+import { CartProvider } from "./components/ContextReducer";
+
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <TopNav />
-        <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route exact path="/login" element={<Login />} />
-          <Route exact path="/signup" element={<Signup />} />
-          <Route exact path="/cart" element={<Cart />} />
-        </Routes>
-        <Footer />
-      </div>
-    </Router>
+    <CartProvider>
+      <Router>
+        <div className="App">
+          
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route exact path="/login" element={<Login />} />
+            <Route exact path="/signup" element={<Signup />} />
+            <Route exact path="/cart" element={<Cart />} />
+          </Routes>
+          <Footer />
+        </div>
+      </Router>
+    </CartProvider>
   );
 }
 
