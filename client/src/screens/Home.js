@@ -10,7 +10,8 @@ const Home = () => {
   const [foodItems, setFoodItems] = useState([]);
   const loadData = async () => {
     let response = await fetch(
-      "https://fooddelivery-backend-9dwj.onrender.com/menu/items",
+      "https://quickbite-htqe.onrender.com/menu/items",
+      // "https://fooddelivery-backend-9dwj.onrender.com/menu/items",
       // "https://fooddelivery-two.vercel.app/menu/items",
       // "http://localhost:5001/menu/items",
       {
