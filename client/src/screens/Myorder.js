@@ -55,9 +55,9 @@ export default function MyOrder() {
                                 style={{ height: "50px", objectFit: "cover" }}
                               />
 
-                              <h5>{arrayData.name}</h5>
-                              <p>Quantity: {arrayData.qty}</p>
-                              <p>Price: ${arrayData.price}</p>
+                              <p>{arrayData.name}</p>
+                              <p>Qty: {arrayData.qty}</p>
+                              <p>${arrayData.price}</p>
                             </div>
                           </div>
                         );
