@@ -2,12 +2,12 @@ import React from "react";
 import ReactDom from "react-dom";
 const MODAL_STYLES = {
   position: "fixed",
-  top: "50%",
+  top: "54%",
   left: "50%",
   backgroundColor: "rgb(256,256,256)",
   transform: "translate(-50%, -50%)",
   zIndex: 1000,
-  height: "70%",
+  height: "85%",
   width: "90%",
 };
 
