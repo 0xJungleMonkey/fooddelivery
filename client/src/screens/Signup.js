@@ -73,7 +73,7 @@ const Signup = () => {
           // Set the height of the container to the viewport height
         }}
       >
-        <Card style={{ width: "30rem", height: "36rem" }}>
+        <Card style={{ width: "30rem" }}>
           <Card.Body>
             <Card.Title className="text-center">Signup</Card.Title>
             <Card.Text>Please sign up an account to place order.</Card.Text>
