@@ -50,10 +50,10 @@
   max-height: 50vh;
 }
 
-/* .carousel-caption {
-  background-color: rgba(0, 0, 0, 0.5);
-  bottom: 35%;
-} */
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.6);
+  bottom: 100%;
+}
 /* .carousel-caption2 {
   background-color: rgba(0, 0, 0, 0.5);
   bottom: 5%;
@@ -108,13 +108,13 @@
     display: flex;
     align-items: center;
   }
-  
+
   .action-button {
     margin: 0 5px;
     padding: 5px 10px;
     font-size: 14px;
   }
-  
+
   .remove-button {
     margin-left: 10px;
     padding: 5px 10px;

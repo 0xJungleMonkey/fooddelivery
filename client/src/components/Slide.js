@@ -17,7 +17,7 @@ function Slide() {
       <Carousel.Item className="custom-slide">
         <Image src="/images/s2.jpg" fluid />
 
-        <Carousel.Caption>
+        <Carousel.Caption className="carousel-caption">
           <h3>Fast Delivery</h3>
           <p>
             Experience the speed of sound with our quick delivery service,
@@ -28,7 +28,7 @@ function Slide() {
       <Carousel.Item className="custom-slide">
         <Image src="/images/s4.jpg" fluid />
 
-        <Carousel.Caption>
+        <Carousel.Caption className="carousel-caption">
           <h3>Farm-Fresh</h3>
           <p>
             Savor the exceptional quality of ingredients, straight from the farm

@@ -1,6 +1,6 @@
 import React from "react";
 import MenuItem from "../components/MenuItem.js";
-import Bslide from "../components/Bslide.js";
+import Slide from "../components/Slide.js";
 import { useEffect, useState } from "react";
 // import Slide from "../components/Slide.js";
 import Row from "react-bootstrap/Row";
@@ -32,7 +32,7 @@ const Home = () => {
   return (
     <div>
       <TopNav />
-      <Bslide />
+      <Slide />
       <div className="container">
         {foodCategory.length !== 0 ? (
           foodCategory.map((data) => {

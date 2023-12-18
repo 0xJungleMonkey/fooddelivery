@@ -66,10 +66,7 @@ const Login = () => {
         <Card style={{ width: "30rem" }}>
           <Card.Body>
             <Card.Title>Sign In</Card.Title>
-            <Card.Text>
-              Please sign in an account to reserve table, place order and enjoy
-              member benefits.
-            </Card.Text>
+            <Card.Text>Please sign in an account to place order.</Card.Text>
             <Form onSubmit={handleSubmit}>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>

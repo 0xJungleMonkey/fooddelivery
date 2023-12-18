@@ -2,7 +2,7 @@ import React from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Card from "react-bootstrap/Card";
-import { Link, Navigate, useHistory, useNavigate } from "react-router-dom";
+import { Link,  useNavigate } from "react-router-dom";
 import { useState } from "react";
 import TopNav from "../components/TopNav";
 const Signup = () => {
@@ -66,10 +66,7 @@ const Signup = () => {
         <Card style={{ width: "30rem", height: "36rem" }}>
           <Card.Body>
             <Card.Title>Signup</Card.Title>
-            <Card.Text>
-              Please sign up an account to reserve table, place order and enjoy
-              member benefits.
-            </Card.Text>
+            <Card.Text>Please sign up an account to place order.</Card.Text>
             <Form onSubmit={handleSubmit}>
               <Form.Group className="mb-3" controlId="formBasicName">
                 <Form.Label>Username</Form.Label>
@@ -113,12 +110,6 @@ const Signup = () => {
                   value={credentials.address}
                   name="address"
                   onChange={onChange}
-                />
-              </Form.Group>
-              <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                <Form.Check
-                  type="checkbox"
-                  label="Receive email notice for orders"
                 />
               </Form.Group>
               <Button variant="primary" type="submit">

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Footer from "../components/Footer";
 import TopNav from "../components/TopNav";
 
 export default function MyOrder() {

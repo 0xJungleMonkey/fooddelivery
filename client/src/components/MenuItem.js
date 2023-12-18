@@ -4,21 +4,14 @@ import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import { useDispatchCart, useCart } from "./ContextReducer";
 import { useNavigate } from "react-router-dom";
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 
 function MenuItem({ item }) {
   let data = useCart();
   let navigate = useNavigate();
   const [qty, setQty] = useState(1);
   const dispatch = useDispatchCart();
-  const handleClick = () => {
-    if (!localStorage.getItem("authToken")) {
-      navigate("/login");
-    }
-  };
-  const handleQty = (e) => {
-    setQty(e.target.value);
-  };
+
   const handleAddToCart = async () => {
     if (!localStorage.getItem("authToken")) {
       navigate("/login");
@@ -51,20 +44,20 @@ function MenuItem({ item }) {
     console.log("Cart after update:", data);
   };
 
-  const cardStyle = {
-    height: "100%",
-  }; // Set a fixed height for the cards
   return (
     <Col key={item._id}>
-      <Card style={cardStyle}>
+      <Card
+        style={{
+          height: "100%", // Set a fixed height for the cards
+        }}
+      >
         <Card.Img variant="top" src={item.img} />
         <Card.Body className="d-flex flex-column">
           <Card.Title className="m-auto">{item.name}</Card.Title>
           <Card.Text className="m-auto text-center">
             {item.description}
           </Card.Text>
-          <Card.Text className="m-auto">{item.price}</Card.Text>
-
+          <Card.Text className="mt-auto text-center">{item.price}</Card.Text>
           <div className="mt-auto d-flex justify-content-between align-items-center">
             {/* <Col sm={6} className="custom-select">
               <Form.Select
