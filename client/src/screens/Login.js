@@ -4,6 +4,7 @@ import { Form, Card } from "react-bootstrap";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import TopNav from "../components/TopNav";
+import { toast, Toaster } from "react-hot-toast";
 const Login = () => {
   const [credentials, setCredentials] = useState({
     email: "",
@@ -34,9 +35,9 @@ const Login = () => {
       }
     );
     const json = await response.json();
-    console.log(json);
+    // console.log(json);
     if (!json.success) {
-      alert("Enter Valid Credentials");
+      toast.error("Enter Valid Credentials");
     }
     if (json.success) {
       localStorage.setItem("authToken", json.authToken);
@@ -101,6 +102,7 @@ const Login = () => {
                 <Button variant="primary" type="submit">
                   Submit
                 </Button>
+                <Toaster position="top-center" />
               </div>
             </Form>
           </Card.Body>

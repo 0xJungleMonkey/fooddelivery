@@ -57,7 +57,9 @@ function MenuItem({ item }) {
           <Card.Text className="m-auto text-center">
             {item.description}
           </Card.Text>
-          <Card.Text className="mt-auto text-center">{item.price}</Card.Text>
+          <Card.Text className="mt-auto text-center">
+            ${parseInt(item.price.slice(1))}
+          </Card.Text>
           <div className="mt-auto d-flex justify-content-between align-items-center">
             {/* <Col sm={6} className="custom-select">
               <Form.Select

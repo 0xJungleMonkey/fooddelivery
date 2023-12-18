@@ -3,13 +3,13 @@ import TopNav from "../components/TopNav";
 import { Trash } from "react-bootstrap-icons";
 import QuantitySelector from "../components/QuantitySelector";
 import { useCart, useDispatchCart } from "../components/ContextReducer";
+import { toast, Toaster } from "react-hot-toast";
 export default function Cart() {
   let data = useCart();
   let dispatch = useDispatchCart();
   if (data.length === 0) {
     return (
       <>
-        {/* <TopNav /> */}
         <div>
           <div className="m-5 w-100 text-center fs-3 ">The Cart is Empty!</div>
         </div>
@@ -69,57 +69,64 @@ export default function Cart() {
     );
     console.log("JSON RESPONSE:::::", response.status);
     if (response.status === 200) {
-      dispatch({ type: "DROP" });
+      toast.success("Your order has been placed! Thank you!");
+      setTimeout(() => {
+        dispatch({ type: "DROP" });
+      }, 1200);
+      // toast.success("Your order has been placed! Thank you!");
     }
   };
 
   return (
     <>
-      {/* <TopNav /> */}
       <div className="container mt-5 table-responsive table-responsive-sm table-responsive-md">
-        <div className="mt-5">
-          <table className="table table-hover ">
-            <thead className=" text-success fs-4">
+        {/* <div className="mt-5"> */}
+        <h1 className="text-center">Shopping Cart</h1>
+        <hr></hr>
+        <table className="table table-hover ">
+          <thead className=" text-success fs-4">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Amount</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            {data.map((food, index) => (
               <tr>
-                <th scope="col">#</th>
-                <th scope="col">Name</th>
-                <th scope="col">Quantity</th>
-                <th scope="col">Amount</th>
-                <th scope="col"></th>
+                <th scope="row">{index + 1}</th>
+                <td>{food.name}</td>
+                <td>
+                  <QuantitySelector
+                    quantity={food.qty}
+                    onIncrement={() => handleIncrement(food)}
+                    onDecrement={() => handleDecrement(food, index)}
+                    onRemove={handleRemove}
+                  />
+                </td>
+                <td>${food.price}</td>
+                <td onClick={() => handleRemove(index)}>
+                  <Trash />
+                </td>
               </tr>
-            </thead>
-            <tbody>
-              {data.map((food, index) => (
-                <tr>
-                  <th scope="row">{index + 1}</th>
-                  <td>{food.name}</td>
-                  <td>
-                    <QuantitySelector
-                      quantity={food.qty}
-                      onIncrement={() => handleIncrement(food)}
-                      onDecrement={() => handleDecrement(food, index)}
-                      onRemove={handleRemove}
-                    />
-                  </td>
-                  <td>${food.price}</td>
-                  <td onClick={() => handleRemove(index)}>
-                    <Trash />
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-          <div>
-            <h1 className="fs-2">Total Price: ${totalPrice}</h1>
-          </div>
-          <div>
-            <button className="btn bg-success mt-5 " onClick={handleCheckOut}>
-              {" "}
-              Check Out{" "}
-            </button>
-          </div>
+            ))}
+          </tbody>
+        </table>
+        <div className="d-flex flex-row justify-content-between m-2">
+          <h3 className="fs-2 ms-5">Total Price: </h3>
+          <h3 className="fs-2 me-5">${totalPrice}</h3>
+        </div>
+        <div className="d-flex justify-content-end">
+          <button className="btn bg-success me-5 mt-3" onClick={handleCheckOut}>
+            {" "}
+            Check Out{" "}
+          </button>
+          <Toaster position="top-center" />
         </div>
       </div>
+      {/* </div> */}
     </>
   );
 }

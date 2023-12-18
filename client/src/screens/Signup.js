@@ -50,7 +50,7 @@ const Signup = () => {
       );
       setTimeout(() => {
         navigate("/login");
-      }, 2000);
+      }, 1500);
     } else {
       toast.error(
         "Please input valid email and Password should be at least 6 letters."

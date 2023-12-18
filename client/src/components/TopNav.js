@@ -36,7 +36,7 @@ const TopNav = () => {
             onClick={() => {
               navigate("/");
             }}
-            style={{ fontSize: 25 }}
+            style={{ fontSize: 25, cursor: "pointer" }}
           >
             <EggFried size={35} /> QuickBite
           </Navbar.Brand>

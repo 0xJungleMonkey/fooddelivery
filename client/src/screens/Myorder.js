@@ -30,7 +30,7 @@ export default function MyOrder() {
     <div>
       <TopNav />
       <div className="container" style={{ marginTop: "90px" }}>
-        <h1>Order history</h1>
+        <h1 className="text-center">Order history</h1>
         {Array(orderData).map((data) => {
           return data.orderData
             ? data.orderData.order_data
