@@ -45,8 +45,9 @@ function MenuItem({ item }) {
   };
 
   return (
-    <Col key={item._id}>
+    <Col>
       <Card
+        key={item._id}
         style={{
           height: "100%", // Set a fixed height for the cards
         }}
@@ -61,22 +62,6 @@ function MenuItem({ item }) {
             ${parseInt(item.price.slice(1))}
           </Card.Text>
           <div className="mt-auto d-flex justify-content-between align-items-center">
-            {/* <Col sm={6} className="custom-select">
-              <Form.Select
-                aria-label="Default select example"
-                onClick={handleClick}
-                onChange={handleQty}
-              >
-                {Array.from(Array(6), (e, i) => {
-                  return (
-                    <option key={i + 1} value={i + 1}>
-                      {i + 1}
-                    </option>
-                  );
-                })}
-              </Form.Select>
-            </Col>
-            <Col sm={6}> */}
             <Button
               variant="primary"
               className="m-auto"
@@ -84,7 +69,6 @@ function MenuItem({ item }) {
             >
               Add to cart
             </Button>
-            {/* </Col> */}
           </div>
         </Card.Body>
       </Card>
