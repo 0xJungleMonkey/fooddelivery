@@ -9,22 +9,28 @@ function Footer() {
     <div class="container">
       <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
         <div class="col-md-4 d-flex align-items-center">
-          <span class="mb-3 mb-md-0 text-muted">© 2023 Xinqi Davis</span>
+          <span class="mb-3 mb-md-0 text-muted ms-5">© 2023 Xinqi Davis</span>
         </div>
 
-        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex me-5">
           <li class="ms-3">
-            <a class="text-muted" href="#">
+            <a
+              class="text-muted"
+              href="https://www.linkedin.com/in/xinqidavis/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <FaLinkedin size={30} />
             </a>
           </li>
+
           <li class="ms-3">
-            <a class="text-muted" href="#">
-              <HiOutlineMail size={30} />
-            </a>
-          </li>
-          <li class="ms-3">
-            <a class="text-muted" href="#">
+            <a
+              class="text-muted"
+              href="https://github.com/0xJungleMonkey"
+              target="_blank"
+              rel="noreferrer"
+            >
               <FaGithub size={30} />
             </a>
           </li>
