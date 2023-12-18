@@ -64,11 +64,13 @@ const Signup = () => {
     <>
       <TopNav />
       <div
+        className="mt-5"
         style={{
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          height: "100vh", // Set the height of the container to the viewport height
+          height: "90vh",
+          // Set the height of the container to the viewport height
         }}
       >
         <Card style={{ width: "30rem", height: "36rem" }}>
@@ -95,9 +97,6 @@ const Signup = () => {
                   name="email"
                   onChange={onChange}
                 />
-                <Form.Text className="text-muted">
-                  We'll never share your email with anyone else.
-                </Form.Text>
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="formBasicPassword">
