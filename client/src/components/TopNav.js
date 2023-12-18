@@ -52,23 +52,32 @@ const TopNav = () => {
                       <Cart></Cart>
                     </Modal>
                   )}
-                  <Nav.Link onClick={() => navigate("/orders")}>
+                  <Nav.Link
+                    style={{ color: "white" }}
+                    onClick={() => navigate("/orders")}
+                  >
                     My orders
                   </Nav.Link>
-                  <Nav.Link onClick={handleLogout} href="/login">
+                  <Nav.Link
+                    style={{ color: "white" }}
+                    onClick={handleLogout}
+                    href="/login"
+                  >
                     Logout
                   </Nav.Link>
                 </>
               ) : (
                 <>
-                  <Nav.Link
+                  {/* <Nav.Link
+                    style={{ color: "white" }}
                     onClick={() => {
                       navigate("/");
                     }}
                   >
                     Home
-                  </Nav.Link>
+                  </Nav.Link> */}
                   <Nav.Link
+                    style={{ color: "white" }}
                     onClick={() => {
                       navigate("/signup");
                     }}
@@ -76,6 +85,7 @@ const TopNav = () => {
                     Signup
                   </Nav.Link>
                   <Nav.Link
+                    style={{ color: "white" }}
                     onClick={() => {
                       navigate("/login");
                     }}
@@ -84,8 +94,6 @@ const TopNav = () => {
                   </Nav.Link>
                 </>
               )}
-
-              {/* <Theme /> */}
             </Nav>
           </div>
         </Container>

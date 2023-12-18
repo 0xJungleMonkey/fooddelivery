@@ -79,9 +79,9 @@
 .cartwidget-container {
   /* margin: 1rem; */
   /* padding: 0rem;
-  display: flex;
+  display: flex; */
   border: none;
-  background: none; */
+  background: none;
   cursor: pointer;
   /* align-items: center;
   flex-direction: row-reverse;
@@ -91,12 +91,12 @@
     outline: 1px solid white;
   } */
 }
-.cartwidget-shoppingCart {
+/* .cartwidget-shoppingCart {
   height: 3em;
   padding: 1.5rem 0.4rem;
   will-change: filter;
   transition: filter 300ms;
-}
+} */
 
 .cartwidget-productsCount {
   /* z-index: 1;
@@ -117,4 +117,3 @@
   padding: 5px 10px;
   font-size: 14px;
 }
-

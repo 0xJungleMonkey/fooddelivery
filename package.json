@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "@material-ui/icons": "^4.11.3"
+    "@material-ui/icons": "^4.11.3",
+    "react-notifications": "^1.7.4"
   }
 }

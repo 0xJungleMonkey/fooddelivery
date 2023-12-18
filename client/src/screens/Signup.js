@@ -2,9 +2,11 @@ import React from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Card from "react-bootstrap/Card";
-import { Link,  useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import TopNav from "../components/TopNav";
+import { Toaster, toast } from "react-hot-toast";
+
 const Signup = () => {
   const navigate = useNavigate();
   const [credentials, setCredentials] = useState({
@@ -43,10 +45,16 @@ const Signup = () => {
     const json = await response.json();
     console.log(json);
     if (json.success) {
-      alert("Welcome! Signed up successfully! Please login.");
-      navigate("/login");
+      toast.success(
+        "Welcome! Signed up successfully! " // Set a longer autoClose time for the toast
+      );
+      setTimeout(() => {
+        navigate("/login");
+      }, 2000);
     } else {
-      alert("Enter Valid Credentials");
+      toast.error(
+        "Please input valid email and Password should be at least 6 letters."
+      );
     }
   };
   const onChange = (event) => {
@@ -65,7 +73,7 @@ const Signup = () => {
       >
         <Card style={{ width: "30rem", height: "36rem" }}>
           <Card.Body>
-            <Card.Title>Signup</Card.Title>
+            <Card.Title className="text-center">Signup</Card.Title>
             <Card.Text>Please sign up an account to place order.</Card.Text>
             <Form onSubmit={handleSubmit}>
               <Form.Group className="mb-3" controlId="formBasicName">
@@ -79,7 +87,7 @@ const Signup = () => {
                 />
               </Form.Group>
               <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label>Email address</Form.Label>
+                <Form.Label>Email</Form.Label>
                 <Form.Control
                   type="email"
                   placeholder="Enter email"
@@ -112,10 +120,15 @@ const Signup = () => {
                   onChange={onChange}
                 />
               </Form.Group>
-              <Button variant="primary" type="submit">
-                Submit
-              </Button>
-              <Link to="/login">Login</Link>
+              <div className="d-flex justify-content-center flex-column">
+                <Button variant="primary" type="submit">
+                  Submit
+                </Button>
+                <Toaster />
+                <Link to="/login" className="text-center">
+                  Already have account? Login
+                </Link>
+              </div>
             </Form>
           </Card.Body>
         </Card>

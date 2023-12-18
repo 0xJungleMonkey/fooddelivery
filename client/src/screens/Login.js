@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import { Form, Card } from "react-bootstrap";
 import { useState } from "react";
@@ -52,6 +52,7 @@ const Login = () => {
   const onChange = (event) => {
     setCredentials({ ...credentials, [event.target.name]: event.target.value });
   };
+
   return (
     <>
       <TopNav />
@@ -63,13 +64,20 @@ const Login = () => {
           height: "100vh", // Set the height of the container to the viewport height
         }}
       >
-        <Card style={{ width: "30rem" }}>
+        <Card style={{ width: "25rem" }}>
           <Card.Body>
-            <Card.Title>Sign In</Card.Title>
-            <Card.Text>Please sign in an account to place order.</Card.Text>
+            <Card.Title className="text-center">Sign In</Card.Title>
+
+            <Card.Text>
+              Please sign in an account to place order. You may try with the
+              following user credentials:
+            </Card.Text>
+            <Card.Text>Email: example@user.com</Card.Text>
+            <Card.Text>Password: exampleuser</Card.Text>
+
             <Form onSubmit={handleSubmit}>
               <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label>Email address</Form.Label>
+                <Form.Label>Email</Form.Label>
                 <Form.Control
                   type="email"
                   placeholder="Enter email"
@@ -89,12 +97,11 @@ const Login = () => {
                   onChange={onChange}
                 />
               </Form.Group>
-              <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                <Form.Check type="checkbox" label="Check me out" />
-              </Form.Group>
-              <Button variant="primary" type="submit">
-                Submit
-              </Button>
+              <div className="d-flex justify-content-center flex-wrap flex-column">
+                <Button variant="primary" type="submit">
+                  Submit
+                </Button>
+              </div>
             </Form>
           </Card.Body>
         </Card>
