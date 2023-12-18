@@ -5,6 +5,9 @@ import { Moon, Sun } from "react-bootstrap-icons";
 function YourComponent() {
   const [isDarkMode, setIsDarkMode] = useState(true);
   const darkmode = new Darkmode();
+  useEffect(() => {
+    darkmode.showWidget();
+  }, []);
   const handleDarkModeToggle = () => {
     darkmode.toggle();
     isDarkMode ? setIsDarkMode(false) : setIsDarkMode(true);

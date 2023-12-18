@@ -11,8 +11,14 @@ import TopNav from "./components/TopNav";
 import Footer from "./components/Footer";
 import { CartProvider } from "./components/ContextReducer";
 import MyOrder from "./screens/Myorder";
-
+import Darkmode from "darkmode-js";
 function App() {
+  const options = {
+    label: "🌓", // default: ''
+  };
+
+  const darkmode = new Darkmode(options);
+  darkmode.showWidget();
   return (
     <CartProvider>
       <Router>

@@ -85,7 +85,7 @@ const TopNav = () => {
                 </>
               )}
 
-              <Theme />
+              {/* <Theme /> */}
             </Nav>
           </div>
         </Container>
