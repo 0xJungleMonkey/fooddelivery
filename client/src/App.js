@@ -12,7 +12,6 @@ import Footer from "./components/Footer";
 import { CartProvider } from "./components/ContextReducer";
 import MyOrder from "./screens/Myorder";
 import Darkmode from "darkmode-js";
-import { ToastProvider } from "./components/ToastProvider";
 function App() {
   const options = {
     label: "🌓", // default: ''

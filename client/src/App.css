@@ -45,24 +45,24 @@
 /* display: inline-block; Display elements inline to stay in the same row */
 /* } */
 
-.custom-slide {
+.custom-carousel {
   /* width: 100vw; */
-  max-height: 50vh;
+  max-height: 60vh;
 }
 
 .carousel-caption {
   background-color: rgba(0, 0, 0, 0.6);
-  bottom: 100%;
+  /* bottom: 100%; */
 }
 /* .carousel-caption2 {
   background-color: rgba(0, 0, 0, 0.5);
   bottom: 5%;
 } */
-/* .custom-image {
-  width: 100vw;
-  max-height: 60vh;
-  object-fit: fill;
-} */
+.custom-image {
+  /* width: ; */
+  height: 30vh;
+  object-fit: fit;
+}
 .slide-image {
   filter: brightness(30%);
 }

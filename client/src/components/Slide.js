@@ -3,8 +3,8 @@ import Image from "react-bootstrap/Image";
 
 function Slide() {
   return (
-    <Carousel className="custom-slide">
-      <Carousel.Item className="custom-slide">
+    <Carousel className="mt-5">
+      <Carousel.Item className="custom-carousel">
         <Image src="/images/s1.jpg" fluid className="custom-image" />
         <Carousel.Caption className="carousel-caption">
           <h3>Irresistibly Delicious</h3>
@@ -14,8 +14,8 @@ function Slide() {
           </p>
         </Carousel.Caption>
       </Carousel.Item>
-      <Carousel.Item className="custom-slide">
-        <Image src="/images/s2.jpg" fluid />
+      <Carousel.Item className="custom-carousel">
+        <Image src="/images/s2.jpg" fluid className="custom-image" />
 
         <Carousel.Caption className="carousel-caption">
           <h3>Fast Delivery</h3>
@@ -25,8 +25,8 @@ function Slide() {
           </p>
         </Carousel.Caption>
       </Carousel.Item>
-      <Carousel.Item className="custom-slide">
-        <Image src="/images/s4.jpg" fluid />
+      <Carousel.Item className="custom-carousel">
+        <Image src="/images/s4.jpg" fluid className="custom-image" />
 
         <Carousel.Caption className="carousel-caption">
           <h3>Farm-Fresh</h3>

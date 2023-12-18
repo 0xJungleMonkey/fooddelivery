@@ -2,9 +2,9 @@ import React from "react";
 import MenuItem from "../components/MenuItem.js";
 import Slide from "../components/Slide.js";
 import { useEffect, useState } from "react";
-// import Slide from "../components/Slide.js";
 import Row from "react-bootstrap/Row";
 import TopNav from "../components/TopNav.js";
+// import Bslide from "../components/Bslide.js";
 const Home = () => {
   const [foodCategory, setFoodCategory] = useState([]);
   const [foodItems, setFoodItems] = useState([]);

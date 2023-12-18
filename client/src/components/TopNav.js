@@ -56,7 +56,7 @@ const TopNav = () => {
                     style={{ color: "white" }}
                     onClick={() => navigate("/orders")}
                   >
-                    My orders
+                    Orders
                   </Nav.Link>
                   <Nav.Link
                     style={{ color: "white" }}
