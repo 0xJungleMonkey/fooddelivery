@@ -10,18 +10,19 @@ import Cart from "./screens/Cart";
 import TopNav from "./components/TopNav";
 import Footer from "./components/Footer";
 import { CartProvider } from "./components/ContextReducer";
+import MyOrder from "./screens/Myorder";
 
 function App() {
   return (
     <CartProvider>
       <Router>
         <div className="App">
-          
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/signup" element={<Signup />} />
             <Route exact path="/cart" element={<Cart />} />
+            <Route exact path="/orders" element={<MyOrder />} />
           </Routes>
           <Footer />
         </div>

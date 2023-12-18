@@ -52,7 +52,9 @@ const TopNav = () => {
                       <Cart></Cart>
                     </Modal>
                   )}
-                  <Nav.Link>My orders</Nav.Link>
+                  <Nav.Link onClick={() => navigate("/orders")}>
+                    My orders
+                  </Nav.Link>
                   <Nav.Link onClick={handleLogout} href="/login">
                     Logout
                   </Nav.Link>
