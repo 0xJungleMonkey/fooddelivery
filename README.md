@@ -74,8 +74,8 @@ Runs the app in the development mode.\
 Open [http://localhost:5000](http://localhost:5000) to view it in your browser.
 
 ## Contact Information
-This project is part of my portfolio. To view the portfolio, visit Xinqi Davis Portfolio.
-
+This project is part of my portfolio. To view the portfolio, visit [Sherry(Xinqi) Davis Portfolio](https://xinqidavis-fullstackdeveloper.vercel.app/).
+ 
 With experience in MERN full stack, Java + React/Angular full stack, and Ruby on Rails full stack projects, I am well-versed in modern tech stacks. Proficient in multiple languages (JS, Java, Python, Go) and possessing a foundational understanding of OOP, I am seeking an entry-level full-time developer position.
 
 Phone Number: +1-727-855-9151
