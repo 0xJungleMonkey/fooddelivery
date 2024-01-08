@@ -1,70 +1,78 @@
-# Getting Started with Create React App
+# QuickBite
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+QuickBite is a MERN full-stack online food ordering app that enables users to order food online. Users can sign up, log in, add items to the cart, check out, and view their order history.
 
-## Available Scripts
+## Table of Contents
+- [QuickBite](#quickbite)
+  - [Table of Contents](#table-of-contents)
+  - [Demo](#demo)
+  - [Features](#features)
+  - [Technology Used](#technology-used)
+    - [Frontend](#frontend)
+    - [Backend](#backend)
+    - [Authentication and Security](#authentication-and-security)
+  - [Installation](#installation)
+    - [Run Frontend](#run-frontend)
+    - [Run Backend](#run-backend)
+  - [Contact Information](#contact-information)
 
-In the project directory, you can run:
+## Demo
+Check out the live demo on Vercel: [QuickBite Demo](https://quickbite-umber.vercel.app/)
 
-### `npm start`
+## Features
+1. **User Authentication:** Seamless signup, signin, and signout using express-validation and bcrypt for enhanced security.
+2. **Order History:** User-specific order history stored and managed in MongoDB.
+3. **Cart Management:** Intuitive user interface for adding food items to the cart and streamlined checkout functionality.
+4. **Responsive SPA:** Ensures an optimal user experience with a responsive Single Page Application (SPA) design.
+5. **RESTful API:** Backend built on Express.js supports RESTful API endpoints for efficient communication.
+6. **Server Responsiveness:** Implemented a cron job to maintain backend server responsiveness and minimize latency.
+7. **Modern Design:** Stylish and modern user interface with a carousel feature for enhanced visual appeal.
+8. **Database Interaction:** Utilizes Mongoose to interact seamlessly with MongoDB.
 
+## Technology Used
+### Frontend
+- React.js
+- Bootstrap 5
+- Darkmode.js
+
+### Backend
+- Node.js
+- Express.js
+- MongoDB
+
+### Authentication and Security
+- express-validation
+- Bcrypt
+- JWT
+
+## Installation
+
+### Run Frontend
+To run the frontend (create-react-app), navigate to the `./client` directory and run:
+```bash
+npm start
+```
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
+```npm run build```
 
 Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Run Backend
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To run the backend (Express.js), set up the MongoDB connection first. Obtain credentials from MongoDB and set mongodbconnection and jwtprivatekey as environment variables.
 
-### `npm run eject`
+```npm run dev```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Runs the app in the development mode.\
+Open [http://localhost:5000](http://localhost:5000) to view it in your browser.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Contact Information
+This project is part of my portfolio. To view the portfolio, visit Xinqi Davis Portfolio.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+With experience in MERN full stack, Java + React/Angular full stack, and Ruby on Rails full stack projects, I am well-versed in modern tech stacks. Proficient in multiple languages (JS, Java, Python, Go) and possessing a foundational understanding of OOP, I am seeking an entry-level full-time developer position.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Phone Number: +1-727-855-9151
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Email: sherrydavis327@gmail.com

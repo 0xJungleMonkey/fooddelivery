@@ -1,6 +1,5 @@
 const cron = require("cron");
 const https = require("https");
-// Replace 'YOUR_BACKEND_URL' with the actual URL of your backend service
 const backendUrl = "https://quickbite-htqe.onrender.com";
 const job = new cron.CronJob("*/12 * * * * ", function () {
   console.log(`restarting server`);
