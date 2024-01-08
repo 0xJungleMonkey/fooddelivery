@@ -3,6 +3,7 @@
 QuickBite is a MERN full-stack online food ordering app that enables users to order food online. Users can sign up, log in, add items to the cart, check out, and view their order history.
 
 ## Table of Contents
+
 - [QuickBite](#quickbite)
   - [Table of Contents](#table-of-contents)
   - [Demo](#demo)
@@ -55,7 +56,9 @@ npm start
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-```npm run build```
+```bash
+npm run build
+```
 
 Builds the app for production to the `build` folder.\
 
@@ -63,7 +66,9 @@ Builds the app for production to the `build` folder.\
 
 To run the backend (Express.js), set up the MongoDB connection first. Obtain credentials from MongoDB and set mongodbconnection and jwtprivatekey as environment variables.
 
-```npm run dev```
+```bash
+npm run dev
+```
 
 Runs the app in the development mode.\
 Open [http://localhost:5000](http://localhost:5000) to view it in your browser.
