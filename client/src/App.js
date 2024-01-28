@@ -12,13 +12,18 @@ import Footer from "./components/Footer";
 import { CartProvider } from "./components/ContextReducer";
 import MyOrder from "./screens/Myorder";
 import Darkmode from "darkmode-js";
+import ReactGA from "react-ga";
+
 function App() {
+  ReactGA.pageview(window.location.pathname + window.location.search);
+
   const options = {
     label: "🌓", // default: ''
   };
 
   const darkmode = new Darkmode(options);
   darkmode.showWidget();
+
   return (
     <CartProvider>
       <Router>
